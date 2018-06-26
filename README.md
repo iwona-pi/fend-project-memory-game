@@ -2,7 +2,7 @@
 
 ## What is it?
 
-Memory Game Project is part of the Udacity Google Front-End Nanodegree program. But this also simple game to make your concentration and memory better.
+Memory Game Project is a part of the Udacity Google Front-End Nanodegree program. But this also simple game to make your concentration and memory better.
 
 ## How to play?
 * Click on two cards.
