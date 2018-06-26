@@ -105,3 +105,20 @@ card[i].addEventListener('click', game);
 }
 
 click();
+
+//function which match, unmatch the opened cards and open congratulations modal
+function twoCards() { 
+    setTimeout(function(event){
+
+		match();
+		unmatch();
+		clearAll();
+		
+		let cardMatch = document.getElementsByClassName("match");
+		if (cardMatch.length == 16) {
+			
+			modal();
+	}
+}
+				
+,500)}
