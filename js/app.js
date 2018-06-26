@@ -65,6 +65,38 @@ createCards();
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
+let allEvents = [];   // array holding all events
+let currentEvents = [];   // array with the clicked cards
+let symbols = [];     // array with the class of the names of the symbols
+
+//for over the game this function is called
+function game(event) { 
+	let f = event.target.firstChild.className;
+    let h = event.target;
+	symbols.push(f);
+	currentEvents.push(h);
+	allEvents.push(h);
+
+	if (allEvents.length == 1) {
+		timer();
+	}
+	if (currentEvents.length < 3) {
+	event.target.classList.add("open");
+	}
+	
+	if (currentEvents.length > 2) {
+		currentEvents.pop();
+	}
+	
+	if (currentEvents.length == 2) {
+		twoCards();
+		moves();
+		ratingStars();
+
+	} 
+	
+true}
+
 //adding event listeners to each cards
 function click() {
 for (let i=0; i < listCards.length; i++) {
