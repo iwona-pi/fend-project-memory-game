@@ -180,3 +180,13 @@ function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+
+//increment moves counter when two cards were clicked
+let move = 0;
+
+function moves () {
+	 {
+		move++;
+		movesCounter.textContent = move;
+	}
+}
