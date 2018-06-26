@@ -107,3 +107,34 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+/*
+ * Styles for the modal
+ */
+
+.modal {
+    
+    display: none;
+    width:100%;
+    position: fixed;
+    height:100%;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: 1;
+    transition: all 0.4s;
+}
+
+#popubBox {
+    position: relative;
+    height: 500px;
+    background: #fff;*/
+    max-width: 800px;
+    margin: 10vh auto;
+    border-radius: 5px;
+    top: 10em;
+    width: 65%;
+    border-style: ridge;
+    text-align: center;
+
+}
