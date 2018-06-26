@@ -244,3 +244,14 @@ function modal() {
 	document.querySelector(".time-1").textContent = document.querySelector(".timer").textContent;
 	document.querySelector(".stars-1").textContent = blackStar.length;
 }
+
+//close modal
+var span = document.getElementsByClassName("close")[0];
+
+function closeModal () {
+	popup.style.display = "none";
+}
+
+span.onclick = function() {
+    closeModal();
+}
