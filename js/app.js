@@ -33,6 +33,29 @@ function shuffle(array) {
     return array;
 }
 
+//function is called when restart button is clicked or button <Paly again> in popup modal
+function StartGame() {
+     //reset timer
+     clearInterval(time);
+     allEvents =[];   
+     sec = 0;
+	 min=0;
+    
+    document.querySelector(".timer").innerHTML = min+"0m" + ":"+ sec+"0s";   
+  
+	//reset moves
+	move = 0;
+	movesCounter.textContent = 0;
+
+	//reset the previous cards and set the new one
+	deck.innerHTML = "";
+	listCards = shuffle(arr);
+	createCards();
+	click();
+	
+	resetStar();
+}
+
 //reset stars
 function resetStar(){
 	const whiteStar = document.getElementsByClassName("fa-star-o"); 
