@@ -233,3 +233,14 @@ let currentMoves = document.querySelector(".moves").textContent;
 if ((currentMoves > 0) && (currentMoves % 7 == 0)) {
 	blackStar[blackStar.length-1].classList.replace("fa-star", "fa-star-o");		
 }}
+
+//conratulations modal
+const popup = document.querySelector(".modal");
+
+function modal() {
+	 
+	popup.style.display = "block";
+	document.querySelector(".moves-1").textContent = movesCounter.textContent;
+	document.querySelector(".time-1").textContent = document.querySelector(".timer").textContent;
+	document.querySelector(".stars-1").textContent = blackStar.length;
+}
