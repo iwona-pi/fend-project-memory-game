@@ -132,3 +132,19 @@ function match() {
 		};		
 	}	
 }
+
+//unmatching two cards with different symbols	
+function unmatch() {
+	if  (symbols[0]!==symbols[1]) {
+		for (var item of currentEvents) {
+			item.classList.remove("open");
+			}
+		}	
+	}
+
+//function to clear arrays
+function clearAll() {
+	
+	symbols = [];
+	currentEvents = [];	
+}
