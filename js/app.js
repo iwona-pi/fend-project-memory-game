@@ -148,3 +148,30 @@ function clearAll() {
 	symbols = [];
 	currentEvents = [];	
 }
+
+//setting timer
+let sec = 0;
+let	min = 0;
+var time;
+
+function timer () {
+
+ time = setInterval(function() {
+   sec++;
+   
+    if (sec == 60) {
+       min++; 
+       sec = 0;
+    }
+    	sec = checkTime(sec);
+ 	
+    if (min >= 10) {
+    	document.querySelector(".timer").innerHTML = min+"m" + ":"+ sec+"s";
+    }
+
+    if (min < 10) {
+    
+    	document.querySelector(".timer").innerHTML = "0"+min+"m" + ":"+ sec+"s";
+    }  
+
+}, 1000)}
