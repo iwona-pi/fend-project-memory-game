@@ -164,3 +164,30 @@ h2 {
 .resume {
     margin-top: 6%;
 }
+
+/*
+ * Responsive style
+ */
+
+body {
+    min-width:  500px;
+}
+
+@media screen and (max-width: 690px) {
+    
+    .deck {
+        width: 30em;
+        min-height: 30em;
+    }
+    
+    .deck .card {
+        height: 100px;
+        width: 100px;
+}
+    .score-panel {
+        width: 400px;
+    }
+    
+    img{
+        width: 100px;
+}
