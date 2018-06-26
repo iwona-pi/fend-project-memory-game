@@ -255,3 +255,11 @@ function closeModal () {
 span.onclick = function() {
     closeModal();
 }
+
+//restart button to start new game
+const button = document.querySelector("#button");
+
+button.onclick = function() {
+			closeModal();
+			StartGame();
+}
