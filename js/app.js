@@ -33,6 +33,16 @@ function shuffle(array) {
     return array;
 }
 
+//reset stars
+function resetStar(){
+	const whiteStar = document.getElementsByClassName("fa-star-o"); 
+		const countWhiteStar = whiteStar.length; 
+	
+	for (let i=0; i<=countWhiteStar-1;i++) {
+    
+	whiteStar[0].classList.replace("fa-star-o", "fa-star");
+}}
+
 //create the new deck of the cards
 function createCards() {
 for (let i=0; i < listCards.length; i++) {
