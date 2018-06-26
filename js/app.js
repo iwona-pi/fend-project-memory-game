@@ -122,3 +122,13 @@ function twoCards() {
 }
 				
 ,500)}
+
+//matching two cards with the same symbols
+function match() {
+	if (symbols[0]===symbols[1]) {
+		
+		for (var item of currentEvents) {
+			item.classList.add("match");
+		};		
+	}	
+}
