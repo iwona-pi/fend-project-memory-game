@@ -5,6 +5,12 @@ var arr = ["fa fa-diamond", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-bolt",
 		"fa fa-anchor", "fa fa-leaf", "fa fa-bicycle", "fa fa-diamond", "fa fa-bomb",
 			"fa fa-leaf", "fa fa-bomb", "fa fa-bolt", "fa fa-bicycle", "fa fa-paper-plane-o", "fa fa-cube"]
 
+const fragment = document.createDocumentFragment();
+const deck = document.querySelector(".deck");
+let listCards = shuffle(arr);
+const card = document.getElementsByClassName('card');
+const movesCounter = document.querySelector(".moves");
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -27,6 +33,25 @@ function shuffle(array) {
     return array;
 }
 
+function createCards() {
+for (let i=0; i < listCards.length; i++) {
+	
+	const newEl = document.createElement("li");
+	newEl.className = "card";
+
+	const newElement = document.createElement('i');
+	newElement.className = listCards[i];
+	
+	newEl.appendChild(newElement);
+	fragment.appendChild(newEl);
+	
+}
+
+deck.appendChild(fragment);
+
+}
+
+createCards();
 
 /*
  * set up the event listener for a card. If a card is clicked:
