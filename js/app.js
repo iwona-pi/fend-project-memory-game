@@ -190,3 +190,13 @@ function moves () {
 		movesCounter.textContent = move;
 	}
 }
+
+//removing one black star when amount of moves is divisible by 7
+const blackStar = document.getElementsByClassName("fa fa-star");
+
+function ratingStars () {
+let currentMoves = document.querySelector(".moves").textContent; 
+
+if ((currentMoves > 0) && (currentMoves % 7 == 0)) {
+	blackStar[blackStar.length-1].classList.replace("fa-star", "fa-star-o");		
+}}
