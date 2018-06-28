@@ -2,8 +2,8 @@
  * Create a list that holds all of your cards
  */
 var arr = ["fa fa-diamond", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-bolt",  "fa fa-cube",
-		"fa fa-anchor", "fa fa-leaf", "fa fa-bicycle", "fa fa-diamond", "fa fa-bomb",
-			"fa fa-leaf", "fa fa-bomb", "fa fa-bolt", "fa fa-bicycle", "fa fa-paper-plane-o", "fa fa-cube"]
+	   "fa fa-anchor", "fa fa-leaf", "fa fa-bicycle", "fa fa-diamond", "fa fa-bomb",
+	   "fa fa-leaf", "fa fa-bomb", "fa fa-bolt", "fa fa-bicycle", "fa fa-paper-plane-o", "fa fa-cube"]
 
 const fragment = document.createDocumentFragment();
 const deck = document.querySelector(".deck");
@@ -35,12 +35,12 @@ function shuffle(array) {
 
 //function is called when restart button is clicked or button <Play again> in popup modal
 function StartGame() {
-     //reset timer
+    //reset timer
     clearInterval(time);
     allEvents =[];
     sec = 0;
 	min=0;
-    
+  
     document.querySelector(".timer").innerHTML = min+"0m" + ":"+ sec+"0s";   
   
 	//reset moves
@@ -106,7 +106,7 @@ let symbols = [];     // array with the class of the names of the symbols
 
 //for over the game this function is called
 function game(event) { 
-	let f = event.target.firstChild.className;
+    let f = event.target.firstChild.className;
     let h = event.target;
 	symbols.push(f);
 	currentEvents.push(h);
@@ -187,7 +187,7 @@ function clearAll() {
 
 //setting timer
 let sec = 0;
-let	min = 0;
+let min = 0;
 var time;
 
 function timer () {
