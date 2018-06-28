@@ -33,7 +33,7 @@ function shuffle(array) {
     return array;
 }
 
-//function is called when restart button is clicked or button <Paly again> in popup modal
+//function is called when restart button is clicked or button <Play again> in popup modal
 function StartGame() {
      //reset timer
      clearInterval(time);
@@ -55,6 +55,7 @@ function StartGame() {
 	deck.style.pointerEvents = "auto";
 	
 	resetStar();
+	clearAll();
 }
 
 //reset stars
@@ -112,27 +113,19 @@ function game(event) {
 	allEvents.push(h);
 
 	for (var item of currentEvents) {
-		item.classList.add("disabled")
+		item.classList.add("disabled");
+		item.classList.add("open");
 	}
 
 	if (allEvents.length == 1) {
 		timer();
-	}
-	if (currentEvents.length < 3) {
-	event.target.classList.add("open");
-	}
-	
-	if (currentEvents.length > 2) {
-		currentEvents.pop();
 	}
 	
 	if (currentEvents.length == 2) {
 		deck.style.pointerEvents = "none";
 		twoCards();
 		moves();
-		ratingStars();
-		
-
+		ratingStars();		
 	} 
 	
 true}
