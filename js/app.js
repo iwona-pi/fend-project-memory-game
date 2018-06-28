@@ -150,9 +150,9 @@ function twoCards() {
 		deck.style.pointerEvents = "auto";
 		let cardMatch = document.getElementsByClassName("match");
 		if (cardMatch.length == 16) {
-			
+			clearInterval(time);
 			modal();
-
+			
 	}
 }
 				
