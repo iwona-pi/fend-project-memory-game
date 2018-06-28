@@ -36,10 +36,10 @@ function shuffle(array) {
 //function is called when restart button is clicked or button <Play again> in popup modal
 function StartGame() {
      //reset timer
-     clearInterval(time);
-     allEvents =[];   
-     sec = 0;
-	 min=0;
+    clearInterval(time);
+    allEvents =[];
+    sec = 0;
+	min=0;
     
     document.querySelector(".timer").innerHTML = min+"0m" + ":"+ sec+"0s";   
   
@@ -61,27 +61,27 @@ function StartGame() {
 //reset stars
 function resetStar(){
 	const whiteStar = document.getElementsByClassName("fa-star-o"); 
-		const countWhiteStar = whiteStar.length; 
+	const countWhiteStar = whiteStar.length; 
 	
 	for (let i=0; i<=countWhiteStar-1;i++) {
     
-	whiteStar[0].classList.replace("fa-star-o", "fa-star");
+	    whiteStar[0].classList.replace("fa-star-o", "fa-star");
 }}
 
 //create the new deck of the cards
 function createCards() {
-for (let i=0; i < listCards.length; i++) {
+    for (let i=0; i < listCards.length; i++) {
 	
-	const newEl = document.createElement("li");
-	newEl.className = "card";
+	    const newEl = document.createElement("li");
+	    newEl.className = "card";
 
-	const newElement = document.createElement('i');
-	newElement.className = listCards[i];
+    	const newElement = document.createElement('i');
+	    newElement.className = listCards[i];
+	    
+	    newEl.appendChild(newElement);
+	    fragment.appendChild(newEl);
 	
-	newEl.appendChild(newElement);
-	fragment.appendChild(newEl);
-	
-}
+	}
 
 deck.appendChild(fragment);
 
@@ -132,8 +132,8 @@ true}
 
 //adding event listeners to each cards
 function click() {
-for (let i=0; i < listCards.length; i++) {
-card[i].addEventListener('click', game);		
+	for (let i=0; i < listCards.length; i++) {
+		card[i].addEventListener('click', game);		
 	}
 }
 
@@ -147,16 +147,15 @@ function twoCards() {
 		unmatch();
 		clearAll();
 		
+		//display open model when all cards match
 		deck.style.pointerEvents = "auto";
 		let cardMatch = document.getElementsByClassName("match");
+		
 		if (cardMatch.length == 16) {
 			clearInterval(time);
 			modal();
-			
 	}
-}
-				
-,500)}
+},500)}
 
 //matching two cards with the same symbols
 function match() {
@@ -194,7 +193,7 @@ var time;
 function timer () {
 
  time = setInterval(function() {
-   sec++;
+    sec++;
    
     if (sec == 60) {
        min++; 
@@ -211,7 +210,7 @@ function timer () {
     	document.querySelector(".timer").innerHTML = "0"+min+"m" + ":"+ sec+"s";
     }  
 
-}, 1000)}
+},1000)}
 
 function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
@@ -232,10 +231,10 @@ function moves () {
 const blackStar = document.getElementsByClassName("fa fa-star");
 
 function ratingStars () {
-let currentMoves = document.querySelector(".moves").textContent; 
+	let currentMoves = document.querySelector(".moves").textContent; 
 
-if ((currentMoves > 0) && (currentMoves % 7 == 0)) {
-	blackStar[blackStar.length-1].classList.replace("fa-star", "fa-star-o");		
+	if ((currentMoves > 0) && (currentMoves % 7 == 0)) {
+		blackStar[blackStar.length-1].classList.replace("fa-star", "fa-star-o");		
 }}
 
 //conratulations modal
