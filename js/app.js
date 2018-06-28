@@ -52,6 +52,7 @@ function StartGame() {
 	listCards = shuffle(arr);
 	createCards();
 	click();
+	deck.style.pointerEvents = "auto";
 	
 	resetStar();
 }
@@ -110,6 +111,10 @@ function game(event) {
 	currentEvents.push(h);
 	allEvents.push(h);
 
+	for (var item of currentEvents) {
+		item.classList.add("disabled")
+	}
+
 	if (allEvents.length == 1) {
 		timer();
 	}
@@ -122,9 +127,11 @@ function game(event) {
 	}
 	
 	if (currentEvents.length == 2) {
+		deck.style.pointerEvents = "none";
 		twoCards();
 		moves();
 		ratingStars();
+		
 
 	} 
 	
@@ -147,10 +154,12 @@ function twoCards() {
 		unmatch();
 		clearAll();
 		
+		deck.style.pointerEvents = "auto";
 		let cardMatch = document.getElementsByClassName("match");
 		if (cardMatch.length == 16) {
 			
 			modal();
+
 	}
 }
 				
@@ -162,6 +171,7 @@ function match() {
 		
 		for (var item of currentEvents) {
 			item.classList.add("match");
+			item.removeEventListener("click", game);
 		};		
 	}	
 }
@@ -171,6 +181,7 @@ function unmatch() {
 	if  (symbols[0]!==symbols[1]) {
 		for (var item of currentEvents) {
 			item.classList.remove("open");
+			item.classList.remove("disabled");
 			}
 		}	
 	}
