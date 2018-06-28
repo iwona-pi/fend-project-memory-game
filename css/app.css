@@ -38,6 +38,7 @@ h1 {
  */
 
 .deck {
+    pointer-events: auto;
     width: 660px;
     min-height: 680px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
@@ -77,6 +78,10 @@ h1 {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+}
+
+.disabled {
+    pointer-events: none;
 }
 
 /*
